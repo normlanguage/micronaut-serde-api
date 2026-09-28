@@ -1,10 +1,10 @@
 Module module() {
   return module(
     name: "micronaut.serde.api",
-    version: 3,
+    version: 4,
     dependencies: [
-      dependency(repository: "github", name: "micronaut.core", version: 3),
-      dependency(repository: "github", name: "micronaut.inject", version: 3),
+      dependency(repository: "github", name: "micronaut.core", version: 4),
+      dependency(repository: "github", name: "micronaut.inject", version: 4),
       dependency(repository: "github", name: "micronaut.json", version: 3)
     ],
     binding: jarBinding(
