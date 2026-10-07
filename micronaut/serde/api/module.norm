@@ -1,12 +1,14 @@
 Module module() {
   return module(
     name: "micronaut.serde.api",
-    version: 4,
+    version: 5,
     dependencies: [
-      dependency(repository: "github", name: "micronaut.core", version: 4),
-      dependency(repository: "github", name: "micronaut.inject", version: 4),
-      dependency(repository: "github", name: "micronaut.json", version: 3)
+      dependency(repository: "norm", name: "java.base", version: 1),
+      dependency(repository: "github", name: "micronaut.core", version: 5),
+      dependency(repository: "github", name: "micronaut.inject", version: 5),
+      dependency(repository: "github", name: "micronaut.json", version: 4)
     ],
+    exports: ["annotation.Serdeable", "annotation.SerdeableSerializable", "annotation.SerdeableDeserializable", "annotation.SerdeImport", "Serializer", "Deserializer", "config.naming.IdentityStrategy", "ObjectMapper"],
     binding: jarBinding(
       target: mavenJar(
         group: "io.micronaut.serde",
@@ -14,15 +16,15 @@ Module module() {
         version: "3.1.1", resolution: sha256("552cf424397f208aa77600ad737a7da60656aecc2295b350ad85c5ac6abde8b3")
       ),
       api: [
-        jarType(name: "annotation.Serdeable", members: ["naming", "validate"]),
-        jarType(name: "annotation.Serdeable.Serializable", members: ["as", "naming", "using", "validate"]),
-        jarType(name: "annotation.Serdeable.Deserializable", members: ["as", "naming", "using", "validate"]),
-        jarType(name: "annotation.SerdeImport", members: ["deserializable", "mixin", "packageName", "serializable", "value"]),
-        jarType(name: "Serializer", members: []),
-        jarType(name: "Deserializer", members: []),
-        jarType(name: "config.naming.IdentityStrategy", members: []),
+        jarType(name: "io.micronaut.serde.annotation.Serdeable", alias: "annotation.Serdeable", members: ["naming", "validate"]),
+        jarType(name: "io.micronaut.serde.annotation.Serdeable.Serializable", alias: "annotation.SerdeableSerializable", members: ["as", "naming", "using", "validate"]),
+        jarType(name: "io.micronaut.serde.annotation.Serdeable.Deserializable", alias: "annotation.SerdeableDeserializable", members: ["as", "naming", "using", "validate"]),
+        jarType(name: "io.micronaut.serde.annotation.SerdeImport", alias: "annotation.SerdeImport", members: ["deserializable", "mixin", "packageName", "serializable", "value"]),
+        jarType(name: "io.micronaut.serde.Serializer", alias: "Serializer", members: []),
+        jarType(name: "io.micronaut.serde.Deserializer", alias: "Deserializer", members: []),
+        jarType(name: "io.micronaut.serde.config.naming.IdentityStrategy", alias: "config.naming.IdentityStrategy", members: []),
         jarType(
-          name: "ObjectMapper",
+          name: "io.micronaut.serde.ObjectMapper", alias: "ObjectMapper",
           members: [],
           overloads: [
             jarOverload(name: "getDefault", parameterTypes: []),
