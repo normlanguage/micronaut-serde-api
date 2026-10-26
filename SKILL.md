@@ -1,8 +1,10 @@
 # micronaut.serde.api Skill
 
-Use this skill to work with Norm module `micronaut.serde.api` version 5. Use only declarations listed below.
+Use this skill to work with Norm module `micronaut.serde.api` version 6. Use only declarations listed below.
 
 ## `micronaut.serde.api`
+
+Source: `Deserializer.norm`
 
 ### `Deserializer`
 
@@ -10,7 +12,13 @@ Use this skill to work with Norm module `micronaut.serde.api` version 5. Use onl
 interface Deserializer<T>
 ```
 
+Type parameters:
+
+- `T`
+
 ## `micronaut.serde.api`
+
+Source: `ObjectMapper.norm`
 
 ### `ObjectMapper`
 
@@ -24,11 +32,28 @@ interface ObjectMapper extends JsonMapper
 T? readValue<T>(String? arg0, Class<T>? arg1)
 ```
 
+Type parameters:
+
+- `T`
+
+Parameters:
+
+- `arg0`: `String?`
+- `arg1`: `Class<T>?`
+
+Returns: `T?`
+
 #### `writeValueAsString`
 
 ```norm
 String? writeValueAsString(Any? arg0)
 ```
+
+Parameters:
+
+- `arg0`: `Any?`
+
+Returns: `String?`
 
 ### `objectMapperGetDefault`
 
@@ -36,7 +61,11 @@ String? writeValueAsString(Any? arg0)
 ObjectMapper? objectMapperGetDefault()
 ```
 
+Returns: `ObjectMapper?`
+
 ## `micronaut.serde.api`
+
+Source: `Serializer.norm`
 
 ### `Serializer`
 
@@ -44,7 +73,13 @@ ObjectMapper? objectMapperGetDefault()
 interface Serializer<T>
 ```
 
+Type parameters:
+
+- `T`
+
 ## `micronaut.serde.api.annotation`
+
+Source: `annotation/SerdeImport.norm`
 
 ### `SerdeImport`
 
@@ -58,11 +93,15 @@ annotation SerdeImport implements TypeTarget, RuntimeRetention, RepeatableAnnota
 Boolean deserializable
 ```
 
+Type: `Boolean`
+
 #### `mixin`
 
 ```norm
 Class<?> mixin
 ```
+
+Type: `Class<?>`
 
 #### `packageName`
 
@@ -70,11 +109,15 @@ Class<?> mixin
 String packageName
 ```
 
+Type: `String`
+
 #### `serializable`
 
 ```norm
 Boolean serializable
 ```
+
+Type: `Boolean`
 
 #### `value`
 
@@ -82,13 +125,25 @@ Boolean serializable
 Class<?> value
 ```
 
+Type: `Class<?>`
+
 #### `SerdeImport`
 
 ```norm
 SerdeImport(Boolean? deserializable, Class<?>? mixin, String? packageName, Boolean? serializable, Class<?>? value)
 ```
 
+Parameters:
+
+- `deserializable`: `Boolean?`
+- `mixin`: `Class<?>?`
+- `packageName`: `String?`
+- `serializable`: `Boolean?`
+- `value`: `Class<?>?`
+
 ## `micronaut.serde.api.annotation`
+
+Source: `annotation/Serdeable.norm`
 
 ### `Serdeable`
 
@@ -102,11 +157,15 @@ annotation Serdeable implements TypeTarget, RuntimeRetention
 Class<?> naming
 ```
 
+Type: `Class<?>`
+
 #### `validate`
 
 ```norm
 Boolean validate
 ```
+
+Type: `Boolean`
 
 #### `Serdeable`
 
@@ -114,7 +173,14 @@ Boolean validate
 Serdeable(Class<?>? naming, Boolean? validate)
 ```
 
+Parameters:
+
+- `naming`: `Class<?>?`
+- `validate`: `Boolean?`
+
 ## `micronaut.serde.api.annotation`
+
+Source: `annotation/SerdeableDeserializable.norm`
 
 ### `SerdeableDeserializable`
 
@@ -128,11 +194,15 @@ annotation SerdeableDeserializable implements PackageTarget, TypeTarget, FieldTa
 Class<?> asValue
 ```
 
+Type: `Class<?>`
+
 #### `naming`
 
 ```norm
 Class<?> naming
 ```
+
+Type: `Class<?>`
 
 #### `using`
 
@@ -140,11 +210,15 @@ Class<?> naming
 Class<?> using
 ```
 
+Type: `Class<?>`
+
 #### `validate`
 
 ```norm
 Boolean validate
 ```
+
+Type: `Boolean`
 
 #### `SerdeableDeserializable`
 
@@ -152,7 +226,16 @@ Boolean validate
 SerdeableDeserializable(Class<?>? asValue, Class<?>? naming, Class<?>? using, Boolean? validate)
 ```
 
+Parameters:
+
+- `asValue`: `Class<?>?`
+- `naming`: `Class<?>?`
+- `using`: `Class<?>?`
+- `validate`: `Boolean?`
+
 ## `micronaut.serde.api.annotation`
+
+Source: `annotation/SerdeableSerializable.norm`
 
 ### `SerdeableSerializable`
 
@@ -166,11 +249,15 @@ annotation SerdeableSerializable implements PackageTarget, TypeTarget, FieldTarg
 Class<?> asValue
 ```
 
+Type: `Class<?>`
+
 #### `naming`
 
 ```norm
 Class<?> naming
 ```
+
+Type: `Class<?>`
 
 #### `using`
 
@@ -178,11 +265,15 @@ Class<?> naming
 Class<?> using
 ```
 
+Type: `Class<?>`
+
 #### `validate`
 
 ```norm
 Boolean validate
 ```
+
+Type: `Boolean`
 
 #### `SerdeableSerializable`
 
@@ -190,7 +281,16 @@ Boolean validate
 SerdeableSerializable(Class<?>? asValue, Class<?>? naming, Class<?>? using, Boolean? validate)
 ```
 
+Parameters:
+
+- `asValue`: `Class<?>?`
+- `naming`: `Class<?>?`
+- `using`: `Class<?>?`
+- `validate`: `Boolean?`
+
 ## `micronaut.serde.api.config.naming`
+
+Source: `config/naming/IdentityStrategy.norm`
 
 ### `IdentityStrategy`
 
@@ -202,5 +302,19 @@ class IdentityStrategy implements PropertyNamingStrategy
 
 ```norm
 IdentityStrategy(__JarBindingToken token)
+```
+
+Parameters:
+
+- `token`: `__JarBindingToken`
+
+## `micronaut.serde.api.config.naming`
+
+Source: `config/naming/PropertyNamingStrategy.norm`
+
+### `PropertyNamingStrategy`
+
+```norm
+interface PropertyNamingStrategy
 ```
 
