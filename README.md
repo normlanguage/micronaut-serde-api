@@ -5,3 +5,5 @@
 [`micronaut.serde.api`](micronaut/serde/api/module.norm) binds the commonly used `@Serdeable`, `@SerdeImport`, and ObjectMapper APIs from Micronaut Serialization 3.1.1. Compile-time and Jackson runtime examples are in [micronaut-serde-jackson/sample/sample/serde](https://github.com/normlanguage/micronaut-serde-jackson/tree/main/samples/sample/serde).
 
 [Sample ownership](samples/README.md).
+
+[License](LICENSE)
